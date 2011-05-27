@@ -1,4 +1,6 @@
-package com.elesyser;
+package com.elesyser.main;
+
+import com.elesyser.R;
 
 import android.app.Activity;
 import android.os.Bundle;
