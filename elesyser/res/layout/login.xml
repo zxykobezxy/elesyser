@@ -3,8 +3,37 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
-    <RelativeLayout android:id="@+id/relativeLayout1" android:layout_width="wrap_content" android:layout_height="match_parent">
-        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/account" android:layout_alignParentLeft="true" android:id="@+id/textView1"></TextView>
-    
+    <RelativeLayout android:layout_marginTop="40dip" android:id="@+id/relativeLayout1" android:layout_width="wrap_content" android:layout_height="match_parent">
+        <TextView android:layout_marginLeft="25dip"
+        		  android:layout_height="wrap_content"
+        		  android:layout_width="wrap_content"
+        		  android:text="@string/account"
+        		  android:layout_alignParentTop="true"
+        		  android:id="@+id/tv_Username"></TextView>
+        <EditText android:layout_marginLeft="25dip"
+        		  android:layout_marginRight="25dip"
+        		  android:layout_height="wrap_content"
+        		  android:layout_width="fill_parent"
+        		  android:id="@+id/Username"
+        		  android:layout_below="@+id/tv_Username"
+        		  android:layout_alignParentLeft="true"></EditText>
+        <TextView android:layout_height="wrap_content"
+        		  android:layout_width="wrap_content"
+        		  android:text="@string/password"
+        		  android:layout_marginLeft="25dip"
+        		  android:layout_alignParentLeft="true"
+        		  android:layout_below="@+id/Username"
+        		  android:id="@+id/tv_Password"></TextView>
+        <EditText android:layout_height="wrap_content"
+        		  android:layout_width="fill_parent" 
+        		  android:layout_marginLeft="25dip"
+        		  android:layout_marginRight="25dip"
+        		  android:layout_marginTop="5dip"
+        		  android:id="@+id/Password"
+        		  android:password="true"
+        		  android:layout_below="@+id/tv_Password"
+        		  android:singleLine="true" 
+        		  android:layout_alignParentLeft="true" ></EditText>
+    	
     </RelativeLayout>
 </LinearLayout>
