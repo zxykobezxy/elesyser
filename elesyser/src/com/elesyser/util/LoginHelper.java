@@ -44,10 +44,10 @@ public class LoginHelper {
 		params.add(new BasicNameValuePair("Button1","µÇÂ¼"));
 		try {
 			String temp = http.post(Url, params);
-			String temp2 = http.get(Url2);
-			int cnt = temp.indexOf("__VIEWSTATE");
+			//String temp2 = http.get(Url2);
+			//int cnt = temp.indexOf("__VIEWSTATE");
 			//String temp2 = new String(temp.getBytes(),"gbk");
-			System.out.print(temp);
+			//System.out.print(temp);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -8,6 +8,7 @@ import com.elesyser.util.LoginHelper;
 import com.elesyser.util.UserInfo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -31,7 +32,9 @@ public class LoginingActivity extends Activity {
 		
 		@Override
 		protected void onPostExecute(Integer result){
-			
+			Intent intent = new Intent(LoginingActivity.this, MainActivity.class);
+			startActivity(intent);
+			LoginingActivity.this.finish();
 		}
 
 		@Override
@@ -39,7 +42,7 @@ public class LoginingActivity extends Activity {
 			// TODO check the userinfo via the Internet
 			LoginHelper login = new LoginHelper();
 			boolean ret = login.Valid(params[0], params[1]);
-			return null;
+			return 1;
 		}
     }
 }

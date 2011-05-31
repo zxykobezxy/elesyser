@@ -47,7 +47,7 @@ public class SplashActivity extends Activity {
 //			}else {
 //				intent.setClass(yssy.this,LoginingActivity.class);
 //			}
-			intent.setClass(SplashActivity.this, LoginActivity.class);
+			intent.setClass(SplashActivity.this, MainActivity.class);
 			startActivity(intent);
 			SplashActivity.this.finish();
 		}

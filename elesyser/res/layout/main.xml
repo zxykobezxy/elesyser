@@ -9,5 +9,5 @@
     android:layout_height="wrap_content" 
     android:text="@string/hello"
     />
-<ListView android:id="@+id/listView1" android:layout_height="wrap_content" android:layout_width="match_parent"></ListView>
+<ListView android:id="@+id/mainmenu" android:layout_height="fill_parent" android:layout_width="fill_parent"></ListView>
 </LinearLayout>
