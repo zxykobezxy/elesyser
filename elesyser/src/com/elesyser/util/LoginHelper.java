@@ -36,11 +36,12 @@ public class LoginHelper {
 		last = mainhtml.indexOf("/>", first);
 		__EVENTVALIDATION = mainhtml.substring(first + 2, last-2);
 		List <NameValuePair> params = new ArrayList <NameValuePair>(); 
-		params.add(new BasicNameValuePair("txtUserName", Username));
-		params.add(new BasicNameValuePair("txtPwd",Password));
 		params.add(new BasicNameValuePair("__VIEWSTATE",__VIEWSTATE));
 		params.add(new BasicNameValuePair("__EVENTVALIDATION",__EVENTVALIDATION));
+		params.add(new BasicNameValuePair("txtUserName", Username));
+		params.add(new BasicNameValuePair("txtPwd",Password));
 		params.add(new BasicNameValuePair("rbtnLst","1"));
+		params.add(new BasicNameValuePair("Button1","µÇÂ¼"));
 		try {
 			String temp = http.post(Url, params);
 			String temp2 = http.get(Url2);
