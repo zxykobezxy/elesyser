@@ -30,11 +30,14 @@ public class LoginHelper {
 		first = mainhtml.indexOf("=",first + 4);
 		int last = mainhtml.indexOf("/>", first);
 		__VIEWSTATE = mainhtml.substring(first + 2, last-2);
+		UserInfo.__VIEWSTATE = __VIEWSTATE;
 		
 		first = mainhtml.indexOf("id=\"__EVENTVALIDATION\"");
 		first = mainhtml.indexOf("=",first + 4);
 		last = mainhtml.indexOf("/>", first);
 		__EVENTVALIDATION = mainhtml.substring(first + 2, last-2);
+		UserInfo.__EVENTVALIDATION = __EVENTVALIDATION;
+		
 		List <NameValuePair> params = new ArrayList <NameValuePair>(); 
 		params.add(new BasicNameValuePair("__VIEWSTATE",__VIEWSTATE));
 		params.add(new BasicNameValuePair("__EVENTVALIDATION",__EVENTVALIDATION));
@@ -49,7 +52,7 @@ public class LoginHelper {
 			//String temp2 = new String(temp.getBytes(),"gbk");
 			//System.out.print(temp);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generatedfd catch block
 			e.printStackTrace();
 		}
 		return true;
