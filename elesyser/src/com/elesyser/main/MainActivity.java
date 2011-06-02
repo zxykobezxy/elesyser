@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-    	menu.add(Menu.NONE,Menu.FIRST + 1,Menu.NONE,"ÉèÖÃ");
+    	menu.add(Menu.NONE,Menu.FIRST + 1,Menu.NONE,"test");
     	return super.onCreateOptionsMenu(menu);
     }
     
@@ -52,8 +52,8 @@ public class MainActivity extends Activity {
     	List<Map<String, String>> data = new ArrayList<Map<String, String>>();
     	Map<String,String> item = new HashMap<String,String>();
     	Map<String,String> item2 = new HashMap<String,String>();
-    	item.put("tv_mainlistitem", "¿Î³Ì±í");
-    	item2.put("tv_mainlistitem", "¿¼ÊÔ°²ÅÅ");
+    	item.put("tv_mainlistitem", "è¯¾ç¨‹è¡¨");
+    	item2.put("tv_mainlistitem", "è€ƒè¯•å®‰æ’");
     	data.add(item);
     	data.add(item2);
     	return data;

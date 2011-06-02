@@ -46,6 +46,7 @@ public class HttpAccess {
 	{
 		String resultString;
 		HttpGet sourceaddr= new HttpGet(URL);
+		sourceaddr.addHeader("Content-Type", "text/html;charset=UTF-8");
 		try {
 			HttpResponse httpResponse = client.execute(sourceaddr);
 			if (httpResponse.getStatusLine().getStatusCode()==200) 
@@ -68,11 +69,13 @@ public class HttpAccess {
 			HttpPost httpRequest = new HttpPost(URL);
 //			httpRequest.setEntity(new UrlEncodedFormEntity(params, "GB2312"));
 			httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+			httpRequest.addHeader("Content-Type", "text/html;charset=UTF-8");
 			HttpResponse httpResponse = client.execute(httpRequest);
 			Header h = httpResponse.getFirstHeader("Location");
 			if(httpResponse.getStatusLine().getStatusCode() == 200)    
 			{   
 				resultString= readstream(httpResponse.getEntity().getContent());
+				//resultString = new String(resultString.getBytes("gb2312"),"gbk");
 			}else {
 				throw new Exception("can't connect the network");
 			}
@@ -101,7 +104,8 @@ public class HttpAccess {
 	{
 		StringBuffer resultString = new StringBuffer() ;
 		try {
-			BufferedReader inbuff = new BufferedReader(new InputStreamReader(in,"GB2312"));
+			//BufferedReader inbuff = new BufferedReader(new InputStreamReader(in,"GB2312"));
+			BufferedReader inbuff = new BufferedReader(new InputStreamReader(in,"utf-8"));
 			String line = "";
 			while ((line = inbuff.readLine()) != null){
 				resultString.append('\n');
