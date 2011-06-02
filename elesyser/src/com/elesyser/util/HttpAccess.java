@@ -69,7 +69,7 @@ public class HttpAccess {
 			HttpPost httpRequest = new HttpPost(URL);
 //			httpRequest.setEntity(new UrlEncodedFormEntity(params, "GB2312"));
 			httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-			httpRequest.addHeader("Content-Type", "text/html;charset=UTF-8");
+			httpRequest.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 			HttpResponse httpResponse = client.execute(httpRequest);
 			Header h = httpResponse.getFirstHeader("Location");
 			if(httpResponse.getStatusLine().getStatusCode() == 200)    
