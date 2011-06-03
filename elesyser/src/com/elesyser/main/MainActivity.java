@@ -68,6 +68,10 @@ public class MainActivity extends Activity {
 				Intent intent = new Intent(MainActivity.this, CurriculumActivity.class);
 				startActivity(intent);
 			}
+			if(arg2 == 1){
+				Intent intent = new Intent(MainActivity.this, ExamActivity.class);
+				startActivity(intent);
+			}
 		}
     };
 }

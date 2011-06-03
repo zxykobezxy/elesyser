@@ -18,6 +18,7 @@
         <activity android:name=".main.MainActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity android:name=".main.LoginActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity android:name=".main.CurriculumActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name=".main.ExamActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
 
     </application>
 </manifest>
