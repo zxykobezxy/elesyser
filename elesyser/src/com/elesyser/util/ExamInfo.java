@@ -1,7 +1,5 @@
 package com.elesyser.util;
 
-import java.util.Map;
-
 public class ExamInfo {
 	
 	private String CourseName;

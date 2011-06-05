@@ -1,18 +1,13 @@
 package com.elesyser.parser;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.http.params.CoreConnectionPNames;
-
-import android.R.integer;
 
 import com.elesyser.util.ExamInfo;
 
 public class ExamTableParser {
 	
-ArrayList<ExamInfo> List = new ArrayList<ExamInfo>();
+	ArrayList<ExamInfo> List = new ArrayList<ExamInfo>();
 	
 	public ExamTableParser(String source){
 		int pos = source.indexOf("id=\"gridMain\"");
@@ -20,7 +15,6 @@ ArrayList<ExamInfo> List = new ArrayList<ExamInfo>();
 		pos = source.indexOf("<tr",pos  + 1);
 		int endpos = source.indexOf("</table>",pos);
 		String examString = source.substring(pos, endpos);
-		int i=1;
 		pos = 0;
 		endpos = 0;
 		while( pos != -1){

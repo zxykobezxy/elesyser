@@ -1,6 +1,5 @@
 package com.elesyser.util;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,13 +10,15 @@ import com.elesyser.parser.ExamTableParser;
 
 public class ExamManager {
 	
-	String date;
+	String year;
+	String term;
 	String getHtml;
 	String html;
 	String Url = "http://electsys0.sjtu.edu.cn/edu/student/examArrange/examArrange.aspx";
 	
-	public ExamManager(String d){
-		this.date = d;
+	public ExamManager(String y, String t){
+		this.year = y;
+		this.term = t;
 	}
 	
 	public List<ExamInfo> getExams(){
@@ -50,8 +51,8 @@ public class ExamManager {
 		List <NameValuePair> params = new ArrayList <NameValuePair>();
 		params.add(new BasicNameValuePair("__VIEWSTATE",__VIEWSTATE));
 		params.add(new BasicNameValuePair("__EVENTVALIDATION",__EVENTVALIDATION));
-		params.add(new BasicNameValuePair("dpXn",date) );
-		params.add(new BasicNameValuePair("dpXq","2"));
+		params.add(new BasicNameValuePair("dpXn",year) );
+		params.add(new BasicNameValuePair("dpXq",term));
 		params.add(new BasicNameValuePair("btnQuery","查 询"));
 		
 		try {

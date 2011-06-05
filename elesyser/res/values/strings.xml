@@ -5,4 +5,30 @@
     <string name="account">用户名</string>
     <string name="password">密码</string>
     <string name="login">登录</string>
+    <string name="start">自习时间</string>
+    <string name="length">自习时长</string>
+    <string name="search">查询</string>
+    <string name="w">西区教学楼</string>
+    <string name="w1">上院</string>
+    <string name="w2">中院</string>
+    <string name="w3">下院</string>
+    <string name="e">东区教学楼</string>
+    <string name="e4">东上院</string>
+    <string name="e5">东中院</string>
+    <string name="e6">东下院</string>
+    <string name="a">全部教学楼</string> 	
+    <string-array name="timestart">
+        <item>当前时间</item>
+        <item>5分钟后</item>
+        <item>15分钟后</item>
+        <item>30分钟后</item>
+        <item>60分钟后</item>
+    </string-array>
+    <string-array name="timelength">
+        <item>半小时</item>
+        <item>一小时</item>
+        <item>两小时</item>
+        <item>四小时</item>
+        <item>六小时</item>
+    </string-array>
 </resources>

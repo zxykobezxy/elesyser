@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:fadingEdge="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+<LinearLayout
+	android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical">
+  	<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/start"
+    />
+    <Spinner android:id="@+id/timestart"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:prompt="@string/start"
+	/>
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/length"
+    />
+    <Spinner android:id="@+id/timelength"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:prompt="@string/length"
+	/>
+	<RadioGroup android:layout_height="wrap_content" android:checkedButton="@+id/radio_a" android:id="@+id/building" android:layout_width="match_parent">
+      <RadioButton android:layout_height="wrap_content" android:text="@string/w"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:text="@string/w1"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:text="@string/w2"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:text="@string/w3"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:text="@string/e"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:text="@string/e4"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:text="@string/e5"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:text="@string/e6"></RadioButton>
+      <RadioButton android:layout_height="wrap_content" android:id="@+id/radio_a" android:text="@string/a"></RadioButton>
+	</RadioGroup>
+	<Button android:layout_alignParentLeft="true"
+        	android:layout_height="wrap_content"
+        	android:layout_width="wrap_content"
+        	android:id="@+id/bt_search"
+        	android:text="@string/search">
+    </Button>
+</LinearLayout>
+</ScrollView>

@@ -52,10 +52,13 @@ public class MainActivity extends Activity {
     	List<Map<String, String>> data = new ArrayList<Map<String, String>>();
     	Map<String,String> item = new HashMap<String,String>();
     	Map<String,String> item2 = new HashMap<String,String>();
+    	Map<String,String> item3 = new HashMap<String,String>();
     	item.put("tv_mainlistitem", "课程表");
     	item2.put("tv_mainlistitem", "考试安排");
+    	item3.put("tv_mainlistitem", "查询空闲教室");
     	data.add(item);
     	data.add(item2);
+    	data.add(item3);
     	return data;
     }
     
@@ -70,6 +73,10 @@ public class MainActivity extends Activity {
 			}
 			if(arg2 == 1){
 				Intent intent = new Intent(MainActivity.this, ExamActivity.class);
+				startActivity(intent);
+			}
+			if(arg2 == 2){
+				Intent intent = new Intent(MainActivity.this, ClassroomActivity.class);
 				startActivity(intent);
 			}
 		}
