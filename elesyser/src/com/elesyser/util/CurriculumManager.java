@@ -1,6 +1,10 @@
 package com.elesyser.util;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,50 +17,38 @@ import org.apache.http.message.BasicNameValuePair;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
+import android.R.integer;
+import android.util.Log;
+
+import com.elesyser.R.string;
 import com.elesyser.parser.CurriculumTableParser;
 
 public class CurriculumManager {
 	
-	String date;
+	String academicYear;
+	String semester;
 	String getHtml;
 	String html;
+	CurriculumTableParser ctp;
 	String Url = "http://electsys0.sjtu.edu.cn/edu/student/elect/viewLessonTbl.aspx";
 	
-	public CurriculumManager(String d){
-		this.date = d;
+	public CurriculumManager(String d,String s){
+		this.academicYear = d;
+		this.semester = s;
 	}
 	
-	public List<CourseInfo> getCourses(){
+	public CurriculumManager(ObjectInputStream ois){
+		ctp = new CurriculumTableParser(ois);
+	}
+	
+	public List<CourseInfo> getCourses( int day){
 		if (html == null){
 			getHtml();
 		}
-		CurriculumTableParser ctp = new CurriculumTableParser(html);
-		
-		/*int pos = html.indexOf("<body");
-		int end = html.indexOf("</body>");
-		html = html.substring(pos,end + 6);
-		System.out.println(html);
-		SAXParserFactory sf = SAXParserFactory.newInstance();
-		SAXParser sp;
-		XMLReader xr;
-		try {
-			sp = sf.newSAXParser();
-			xr = sp.getXMLReader();
-			CurriculumSaxHandler cs = new CurriculumSaxHandler();
-			xr.setContentHandler(cs);
-			xr.parse(html);
-		} catch (ParserConfigurationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (SAXException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(ctp == null){
+			ctp = new CurriculumTableParser(html);
 		}
-		*/
-		return ctp.getCurriculums(1);
+		return ctp.getCurriculums(day);
 	}
 	
 	private void getHtml() {
@@ -81,9 +73,9 @@ public class CurriculumManager {
 		List <NameValuePair> params = new ArrayList <NameValuePair>();
 		params.add(new BasicNameValuePair("__VIEWSTATE",__VIEWSTATE));
 		params.add(new BasicNameValuePair("__EVENTVALIDATION",__EVENTVALIDATION));
-		params.add(new BasicNameValuePair("dpXn",date) );
-		params.add(new BasicNameValuePair("dpXq","1"));
-		params.add(new BasicNameValuePair("btnOk","È· ¶¨"));
+		params.add(new BasicNameValuePair("dpXn",academicYear) );
+		params.add(new BasicNameValuePair("dpXq",semester));
+		params.add(new BasicNameValuePair("btnOk","È· ï¿½ï¿½"));
 		
 		try {
 			html = http.post(Url, params);
@@ -92,6 +84,16 @@ public class CurriculumManager {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void Persist( ObjectOutputStream oop){
+		try {
+			ctp.Persist(oop);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Log.d("exception", "Persist failed");
+		}
 	}
 
 }

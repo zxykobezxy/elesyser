@@ -1,14 +1,28 @@
 package com.elesyser.util;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class CourseInfo {
+public class CourseInfo implements Serializable {
 	
 	private String CourseName;
 	private int begin;
 	private int end;
 	private String location;
+	private int weekday;
 	
+	/**
+	 * @return the weekday
+	 */
+	public int getWeekday() {
+		return weekday;
+	}
+	/**
+	 * @param weekday the weekday to set
+	 */
+	public void setWeekday(int weekday) {
+		this.weekday = weekday;
+	}
 	/**
 	 * @return the courseName
 	 */

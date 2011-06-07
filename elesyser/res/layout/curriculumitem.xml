@@ -3,5 +3,52 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
-    <TextView android:text="TextView" android:id="@+id/tv_coursename" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+  <RelativeLayout
+		android:layout_width="fill_parent"
+		android:drawingCacheQuality="high"
+		android:layout_height="60dip">
+    <TextView android:text="TextView"
+    		  android:padding="5dip"
+    		  android:textSize="15sp"
+    		  android:id="@+id/tv_coursename"
+    		  android:layout_width="wrap_content"
+    		  android:layout_height="wrap_content"></TextView>
+    <TextView android:text="@string/classroom"
+    		  android:id="@+id/lable_classroom"
+    		  android:layout_width="wrap_content"
+    		  android:padding="5dip"
+    		  android:layout_below="@+id/tv_coursename"
+    		  android:layout_height="wrap_content"></TextView>
+    <TextView android:text="TextView"
+    		  android:id="@+id/tv_classroom"
+    		  android:layout_width="wrap_content"
+    		  android:layout_height="wrap_content"
+    		  android:padding="5dip"
+    		  android:layout_toRightOf="@+id/lable_classroom"
+    		  android:layout_below="@+id/tv_coursename"></TextView>
+    <TextView android:text="@string/classtime"
+    		  android:id="@+id/label_classtime"
+    		  android:layout_toRightOf="@+id/tv_classroom"
+    		  android:layout_width="wrap_content"
+    		  android:padding="5dip"
+    		  android:layout_height="wrap_content"
+    		  android:layout_alignTop="@+id/tv_classroom"
+    		  android:layout_alignBottom="@+id/tv_classroom"></TextView>
+    <TextView android:text="TextView"
+    		  android:id="@+id/tv_begintime"
+    		  android:layout_toRightOf="@+id/label_classtime"
+    		  android:layout_width="wrap_content"
+    		  android:padding="5dip"
+    		  android:layout_height="wrap_content"
+    		  android:layout_alignTop="@+id/label_classtime"
+    		  android:layout_alignBottom="@+id/label_classtime"></TextView>
+    <TextView android:text="TextView"
+    		 android:id="@+id/tv_endtime"
+    		 android:layout_toRightOf="@+id/tv_begintime"
+    		 android:layout_width="wrap_content"
+    		 android:padding="5dip"
+    		 android:layout_height="wrap_content"
+    		 android:layout_alignTop="@+id/tv_begintime"
+    		 android:layout_alignBottom="@+id/tv_begintime"></TextView>
+    	 </RelativeLayout>
 </LinearLayout>

@@ -1,15 +1,23 @@
 package com.elesyser.main;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.elesyser.R;
+import com.elesyser.util.CurriculumManager;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,19 +31,36 @@ import android.widget.AdapterView.OnItemClickListener;
 public class MainActivity extends Activity {
 	
 	ListView menu;
+	CurriculumManager cm;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+		try {
+			FileInputStream fi = openFileInput("test");
+			try {
+				ObjectInputStream oop = new ObjectInputStream(fi);
+				cm = new CurriculumManager(oop);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				Log.d("exception", "Persist failed");
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
         menu = (ListView) findViewById(R.id.mainmenu);
         
         menu.setAdapter(new SimpleAdapter(this,getData(),R.layout.mainlistitem,new String[]{"tv_mainlistitem"},new int[]{R.id.tv_mainlistitem}));
         menu.setOnItemClickListener(contentClickListener);
     }
-    
-    @Override
+   
+
+	@Override
     public boolean onCreateOptionsMenu(Menu menu){
     	menu.add(Menu.NONE,Menu.FIRST + 1,Menu.NONE,"test");
     	return super.onCreateOptionsMenu(menu);

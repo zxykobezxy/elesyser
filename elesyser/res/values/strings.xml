@@ -5,6 +5,16 @@
     <string name="account">用户名</string>
     <string name="password">密码</string>
     <string name="login">登录</string>
+    <string name="day1">星期一</string>
+    <string-array name="weekday">
+        <item>星期一</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+        <item>星期天</item>
+    </string-array>
     <string name="start">自习时间</string>
     <string name="length">自习时长</string>
     <string name="search">查询</string>
@@ -31,4 +41,38 @@
         <item>四小时</item>
         <item>六小时</item>
     </string-array>
+    <string name="classroom">教室:</string>
+    <string-array name="classstarttime">
+        <item>8:00</item>
+        <item>8:55</item>
+        <item>10:00</item>
+        <item>10:55</item>
+        <item>12:00</item>
+        <item>12:55</item>
+        <item>14:00</item>
+        <item>14:55</item>
+        <item>16:00</item>
+        <item>16:55</item>
+        <item>18:00</item>
+        <item>18:55</item>
+        <item>20:00</item>
+        <item>20:55</item>
+    </string-array>
+    <string-array name="classendtime">
+        <item>8:45</item>
+        <item>9:40</item>
+        <item>10:45</item>
+        <item>11:40</item>
+        <item>12:45</item>
+        <item>13:40</item>
+        <item>14:45</item>
+        <item>15:40</item>
+        <item>16:45</item>
+        <item>17:40</item>
+        <item>18:45</item>
+        <item>17:40</item>
+        <item>20:45</item>
+        <item>21:40</item>
+    </string-array>
+    <string name="classtime">时间:</string>   
 </resources>

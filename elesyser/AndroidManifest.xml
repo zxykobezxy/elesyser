@@ -20,6 +20,7 @@
         <activity android:name=".main.CurriculumActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity android:name=".main.ExamActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity android:name=".main.ClassroomActivity" android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <receiver android:name=".alarm.AlarmReceiver"></receiver>
 
     </application>
 </manifest>
