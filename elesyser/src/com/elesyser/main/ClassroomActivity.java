@@ -18,7 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 
@@ -29,7 +29,7 @@ public class ClassroomActivity extends Activity {
 	private Spinner spinner1, spinner2;
 	private ArrayAdapter adapter1, adapter2;
 	private Button search;
-	private RadioGroup rg;
+	private RelativeLayout rg;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class ClassroomActivity extends Activity {
         spinner1.setAdapter(adapter1);
         spinner2.setAdapter(adapter2);
         
-        rg = (RadioGroup) findViewById(R.id.building);
+        rg = (RelativeLayout) findViewById(R.id.building_child);
         search = (Button) findViewById(R.id.bt_search);
         search.setOnClickListener(SearchListener);
     }
@@ -80,14 +80,21 @@ public class ClassroomActivity extends Activity {
 		@Override
 		protected void onPostExecute(List<RoomInfo> result){
 			List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
+			Map<String, Object> head = new HashMap<String, Object>();
+			head.put("tv_building", "教学楼");
+			head.put("tv_roomid", "编号");
+			head.put("tv_seatsnum", "座位数");
+			data.add(head);
 			for(int i = 0; i < result.size(); ++i){
 				Map<String, Object> ret = new HashMap<String, Object>();
-				ret.put("tv_name", result.get(i).getName()+"编号：  "+result.get(i).getID()+"        座位数：  "+result.get(i).getNum());
+				ret.put("tv_building", result.get(i).getName());
+				ret.put("tv_roomid", result.get(i).getID());
+				ret.put("tv_seatsnum", result.get(i).getNum());
 				data.add(ret);
 			}
 			setContentView(R.layout.roomlist);
 			roomlist = (ListView) findViewById(R.id.lv_classroom);
-			roomlist.setAdapter(new SimpleAdapter(ClassroomActivity.this,data,R.layout.examitem,new String[]{"tv_name"}, new int[]{R.id.tv_name}));
+			roomlist.setAdapter(new SimpleAdapter(ClassroomActivity.this,data,R.layout.roomitem,new String[]{"tv_building","tv_roomid","tv_seatsnum"}, new int[]{R.id.tv_building,R.id.tv_roomid,R.id.tv_seatsnum}));
 		}
 
 		@Override

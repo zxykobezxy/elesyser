@@ -15,6 +15,9 @@
         <item>星期六</item>
         <item>星期天</item>
     </string-array>
+    <string name="examtime">考试时间:</string>
+    <string name="location">考试地点:</string>
+    <string name="teacher">教师:</string>
     <string name="start">自习时间</string>
     <string name="length">自习时长</string>
     <string name="search">查询</string>

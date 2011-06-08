@@ -1,45 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
 	xmlns:android="http://schemas.android.com/apk/res/android" 
-	android:fadingEdge="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
-<LinearLayout
-	android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical">
-  	<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/start"
+	android:fadingEdge="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+<RelativeLayout
+	android:layout_height="wrap_content"
+	android:layout_width="fill_parent">
+  	<TextView
+  	android:text="@string/start"
+  	android:id="@+id/label_start"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dip"
+    android:textSize="18sp"
+    android:layout_alignLeft="@+id/timestart"
+   	android:layout_alignRight="@+id/timestart"
+    />
+    <TextView  
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dip"
+    android:textSize="18sp"
+    android:text="@string/length"
+    android:id="@+id/label_length"
+    android:layout_alignTop="@+id/label_start"
+   	android:layout_alignBottom="@+id/label_start"
+   	android:layout_alignLeft="@+id/timelength"
+   	android:layout_alignRight="@+id/timelength"
     />
     <Spinner android:id="@+id/timestart"
-	android:layout_width="fill_parent"
+	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:prompt="@string/start"
+	android:layout_below="@+id/label_start"
 	/>
-    <TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/length"
-    />
     <Spinner android:id="@+id/timelength"
-	android:layout_width="fill_parent"
+	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:prompt="@string/length"
+	android:layout_below="@+id/label_length"
+	android:layout_toRightOf="@+id/timestart"
+   	android:layout_alignTop="@+id/timestart"
+   	android:layout_alignBottom="@+id/timestart"
+   	android:layout_marginLeft="18dip"
 	/>
-	<RadioGroup android:layout_height="wrap_content" android:checkedButton="@+id/radio_a" android:id="@+id/building" android:layout_width="match_parent">
-      <RadioButton android:layout_height="wrap_content" android:text="@string/w"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:text="@string/w1"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:text="@string/w2"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:text="@string/w3"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:text="@string/e"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:text="@string/e4"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:text="@string/e5"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:text="@string/e6"></RadioButton>
-      <RadioButton android:layout_height="wrap_content" android:id="@+id/radio_a" android:text="@string/a"></RadioButton>
+	<RadioGroup 
+	android:layout_height="wrap_content" 
+	android:checkedButton="@+id/radio_a" 
+	android:id="@+id/building" 
+	android:layout_width="match_parent"
+	android:layout_below="@+id/timestart">
+	<RelativeLayout
+	android:layout_height="wrap_content"
+	android:layout_width="fill_parent"
+	android:id="@+id/building_child" >
+      <RadioButton 
+      android:id="@+id/radio_w" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/w"></RadioButton>
+      <RadioButton 
+      android:id="@+id/radio_w1" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/w1"
+      android:layout_below="@+id/radio_w"></RadioButton>
+      <RadioButton 
+      android:id="@+id/radio_w2" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/w2"
+      android:layout_below="@+id/radio_w"
+      android:layout_toRightOf="@+id/radio_w1"
+      android:layout_alignTop="@+id/radio_w1"
+      android:layout_alignBottom="@+id/radio_w1"
+      android:layout_marginLeft="18dip"></RadioButton>
+      <RadioButton 
+      android:id="@+id/radio_w3" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/w3"
+      android:layout_below="@+id/radio_w"
+      android:layout_toRightOf="@+id/radio_w2"
+      android:layout_alignTop="@+id/radio_w2"
+      android:layout_alignBottom="@+id/radio_w2"
+      android:layout_marginLeft="18dip"></RadioButton>
+      <RadioButton 
+      android:id="@+id/radio_e" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/e"
+      android:layout_below="@+id/radio_w1"></RadioButton>
+      <RadioButton 
+      android:id="@+id/radio_e4" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/e4"
+      android:layout_below="@+id/radio_e"></RadioButton>
+      <RadioButton 
+      android:id="@+id/radio_e5" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/e5"
+      android:layout_below="@+id/radio_e"
+      android:layout_toRightOf="@+id/radio_e4"
+      android:layout_alignTop="@+id/radio_e4"
+      android:layout_alignBottom="@+id/radio_e4"
+      android:layout_marginLeft="18dip"></RadioButton>
+      <RadioButton 
+      android:id="@+id/radio_e6" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:text="@string/e6"
+      android:layout_below="@+id/radio_e"
+      android:layout_toRightOf="@+id/radio_e5"
+      android:layout_alignTop="@+id/radio_e5"
+      android:layout_alignBottom="@+id/radio_e6"
+      android:layout_marginLeft="18dip"></RadioButton>
+      <RadioButton 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content"
+      android:id="@+id/radio_a" 
+      android:text="@string/a"
+      android:layout_below="@+id/radio_e4"></RadioButton>
+      </RelativeLayout>
 	</RadioGroup>
-	<Button android:layout_alignParentLeft="true"
+	<Button android:layout_alignParentRight="true"
         	android:layout_height="wrap_content"
         	android:layout_width="wrap_content"
+        	android:layout_below="@+id/building"
         	android:id="@+id/bt_search"
-        	android:text="@string/search">
+        	android:text="@string/search"
+        	android:paddingLeft="15dip"
+        	android:paddingRight="15dip"
+        	android:layout_marginRight="20dip">
     </Button>
-</LinearLayout>
+</RelativeLayout>
 </ScrollView>

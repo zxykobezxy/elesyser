@@ -23,7 +23,7 @@ public class ExamTableParser {
 			ExamInfo exam = new ExamInfo();
 			int temppos = tempString.indexOf("<td");
 			temppos = tempString.indexOf(">",temppos) + 1;
-			int tempendpos = tempString.indexOf("</td>",temppos);
+			int tempendpos = tempString.indexOf(" ",temppos);
 			String name = tempString.substring(temppos,tempendpos);
 			exam.setCourseName(name);
 			temppos = tempString.indexOf("<td",tempendpos);

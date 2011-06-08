@@ -37,9 +37,13 @@ public class ExamActivity extends Activity{
         	temp=Year+"-"+(Year+1);
         	temp2="1";
         }
-        else{
+        else if(Month>=2){
         	temp=(Year-1)+"-"+Year;
         	temp2="2";
+        }
+        else{
+        	temp=(Year-1)+"-"+Year;
+        	temp2="1";
         }
     	new getExam().execute(temp,temp2);
     }
@@ -55,10 +59,13 @@ public class ExamActivity extends Activity{
 			List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
 			for(int i = 0; i < result.size(); ++i){
 				Map<String, Object> ret = new HashMap<String, Object>();
-				ret.put("tv_name", result.get(i).getCourseName()+result.get(i).getTime()+"   "+result.get(i).getLocation()+"   "+result.get(i).getTeacher());
+				ret.put("tv_examname", result.get(i).getCourseName());
+				ret.put("tv_examtime", result.get(i).getTime());
+				ret.put("tv_examlocation", result.get(i).getLocation());
+				ret.put("tv_examteacher", result.get(i).getTeacher());
 				data.add(ret);
 			}
-			examlist.setAdapter(new SimpleAdapter(ExamActivity.this,data,R.layout.examitem,new String[]{"tv_name"}, new int[]{R.id.tv_name}));
+			examlist.setAdapter(new SimpleAdapter(ExamActivity.this,data,R.layout.examitem,new String[]{"tv_examname","tv_examtime","tv_examlocation","tv_examteacher"}, new int[]{R.id.tv_examname,R.id.tv_examtime,R.id.tv_examlocation,R.id.tv_examteacher}));
 		}
 
 		@Override

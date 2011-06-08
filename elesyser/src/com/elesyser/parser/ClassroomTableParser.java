@@ -22,7 +22,7 @@ public class ClassroomTableParser {
 			RoomInfo room = new RoomInfo();
 			int temppos = tempString.indexOf("<td>")+5;
 			int tempendpos = tempString.indexOf("</td>",temppos);
-			String name = tempString.substring(temppos,tempendpos);
+			String name = tempString.substring(temppos,tempendpos-1);
 			room.setName(name);
 			temppos = tempendpos+11;
 			tempendpos = tempString.indexOf("</td>",temppos);
